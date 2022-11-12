@@ -1,43 +1,44 @@
-<p>
-      <img src="https://i.ibb.co/vB5HKHj/Project-Template-Logotype.png" alt="Project Logo" width="726">
+﻿<p align="center">
+      <img src="https://i.ibb.co/9mDz5t6/Scene-Management-Git-Hub-Logo.png" alt="Project Logo" width="850">
 </p>
 
-<p>
-    <img src="https://build.burning-lab.com/app/rest/builds/id=buildType:UnitySwipeInput_DevelopmentBuild/statusIcon.png" alt="Build Status">
-    <a href="https://n-fridman.myjetbrains.com/youtrack/agiles/121-18/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
-    <img src="https://img.shields.io/badge/Engine-2020.3-blueviolet" alt="Unity Version">
-    <img src="https://img.shields.io/badge/Version-1.0.3-blue" alt="Game Version">
+<p align="center">
+    <img src="https://build.burning-lab.com/app/rest/builds/buildType:id:/statusIcon.svg" alt="Build Status">
+    <a href="https://burning-lab.youtrack.cloud/agiles/131-15/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
+    <img src="https://img.shields.io/badge/Engine-2021.3-blueviolet" alt="Unity Version">
+    <img src="https://img.shields.io/badge/Version-9.0.1--pre-blue" alt="Game Version">
     <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
 </p>
 
-## Описание
+## About
 
-Емкое описание проекта. Тут можно рассказать об особенностях и фишках проекта. Для чего он нужен и чем может быть полезен. В случае, если проект является игрок сюда вписывается полное описание проекта.
+Asynchronous scene loading system.
 
-## Ссылки
+## Installation
 
-[GitHub](https://) - Ссылка на репозиторий проекта.
+1. Add Burning-Lab registry to Unity Project.
+2. Install **Scene Management** package via Unity Package Manager.
 
-[Package](https://) - Ссылка на страницу пакета в реестре пакетов.
+**Burning-Lab Registry:**
 
-[Builds](https://) - Ссылка на проект CI системы в котором собирается проект.
+```json
+    {
+      "name": "Burning-Lab Registry",
+      "url": "https://packages.burning-lab.com",
+      "scopes": [
+        "com.burning-lab"
+      ]
+    }
+```
 
-[Roadmap](https://) - Ссылка на доску с задачами проекта.
+## Distribute
 
-[Documentation](https://) - Ссылка на документацию к проекту.
+* [packages.burning-lab.com]()
 
-## Скриншоты:
+## Developers
 
-<table>
-    <tr>
-        <td>
-            <img src="https://i.ibb.co/XLWKT9Q/Project-Screenshot-Template.png" alt="Screenshot">
-        </td>
-        <td>
-            <img src="https://i.ibb.co/XLWKT9Q/Project-Screenshot-Template.png" alt="Screenshot">
-        </td>
-        <td>
-            <img src="https://i.ibb.co/XLWKT9Q/Project-Screenshot-Template.png" alt="Screenshot">
-        </td>
-    </tr>
-</table>
+* [n.fridman](https://github.com/n-fridman)
+
+## License
+
+Project Burning-Lab.SceneManagement is distributed under the MIT license.
