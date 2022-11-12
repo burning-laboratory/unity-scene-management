@@ -1,2 +1,6 @@
 ﻿node_modules/
 packages-lock.json
+packages-lock.json.meta
+
+readme-dist.md
+readme-dist.md.meta
