@@ -5,8 +5,8 @@
 <p align="center">
     <img src="https://build.burning-lab.com/app/rest/builds/buildType:id:UnityAssets_ComBurningLabScenemanagement_ProductionBuild/statusIcon.svg" alt="Build Status">
     <a href="https://burning-lab.youtrack.cloud/agiles/131-15/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
-    <img src="https://img.shields.io/badge/Engine-2021.3-blueviolet" alt="Unity Version">
-    <img src="https://img.shields.io/badge/Version-9.0.1--pre-blue" alt="Game Version">
+    <img src="https://img.shields.io/badge/Engine-{unity_version}-blueviolet" alt="Unity Version">
+    <img src="https://img.shields.io/badge/Version-{package_version}-blue" alt="Game Version">
     <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
 </p>
 
