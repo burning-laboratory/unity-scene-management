@@ -2,10 +2,11 @@
     "name": "BurningLab.SceneManagement.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:0acc523941302664db1f4e527237feb3",
         "GUID:80f1c044b5569a54199454f99f0bad16"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
