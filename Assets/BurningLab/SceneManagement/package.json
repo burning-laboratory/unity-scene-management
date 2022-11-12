@@ -31,7 +31,7 @@
    "devDependencies": {
       "com.burning-lab.utils.js-build-utils": "^0.1.5"
    },
-   "dependencies": {
+   "optionalDependencies": {
       "com.unity.addressables": "1.19.19"
    }
 }
