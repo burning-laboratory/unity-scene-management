@@ -1,6 +1,6 @@
 {
    "name": "com.burning-lab.scenemanagement",
-   "version": "0.1.1",
+   "version": "0.1.2-exp",
    "displayName": "Scene Management",
    "description": "Async scene management system.",
    "unity": "2021.3",
@@ -31,7 +31,7 @@
    "devDependencies": {
       "com.burning-lab.utils.js-build-utils": "^0.1.5"
    },
-   "optionalDependencies": {
+   "dependencies": {
       "com.unity.addressables": "1.19.19"
    }
 }
