@@ -33,5 +33,12 @@
    },
    "optionalDependencies": {
       "com.unity.addressables": "1.19.19"
-   }
+   },
+   "samples": [
+      {
+         "displayName": "Tutorial app",
+         "description": "Scene management system tutorial application.",
+         "path": "Samples/SM Tutorial Application"
+      }
+   ]
 }
