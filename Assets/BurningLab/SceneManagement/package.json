@@ -1,6 +1,6 @@
 {
    "name": "com.burning-lab.scenemanagement",
-   "version": "0.1.3-exp",
+   "version": "0.1.4-exp",
    "displayName": "Scene Management",
    "description": "Async scene management system.",
    "unity": "2021.3",
