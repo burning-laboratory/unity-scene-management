@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -58,6 +59,30 @@ namespace BurningLab.SceneManagement
         /// </summary>
         
         private static ScenesSwitcher _instance;
+        
+        /// <summary>
+        /// Loaded scenes list.
+        /// </summary>
+        public List<SceneData> LoadedScenes => _loadedScenes;
+
+        /// <summary>
+        /// Scenes database reference.
+        /// </summary>
+        public ScenesDatabase Database => _database;
+        
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// Scene loaded event.
+        /// </summary>
+        public event Action<SceneData> OnSceneLoaded;
+        
+        /// <summary>
+        /// Scene unloaded event.
+        /// </summary>
+        public event Action<SceneData> OnSceneUnloaded; 
 
         #endregion
         
@@ -142,7 +167,9 @@ namespace BurningLab.SceneManagement
         {
             SceneData loadedSceneData = _database.GetSceneDataByName(scene.name);
             _loadedScenes.Add(loadedSceneData);
-
+            
+            OnSceneLoaded?.Invoke(loadedSceneData);
+            
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
             UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Scene loaded: {loadedSceneData.SceneAssetName}", gameObject);
 #endif
@@ -193,6 +220,8 @@ namespace BurningLab.SceneManagement
         {
             SceneData unloadedSceneData = _database.GetSceneDataByName(scene.name);
             _loadedScenes.Remove(unloadedSceneData);
+            
+            OnSceneUnloaded?.Invoke(unloadedSceneData);
             
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
             UnityConsole.PrintLog("ScenesSwitcher", "OnSceneUnloadedEventHandler", $"Scene unloaded: {scene.name} ", gameObject);
