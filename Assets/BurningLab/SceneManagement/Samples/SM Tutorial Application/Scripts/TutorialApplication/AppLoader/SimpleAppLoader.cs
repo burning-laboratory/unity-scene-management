@@ -32,8 +32,6 @@ public class SimpleAppLoader : MonoBehaviour
         foreach (LoadStage stage in _stages)
         {
             OnStartStage?.Invoke(stage);
-            Debug.Log($"Start stage: {stage.stageName}");        
-            Debug.Log(stage.type);
             switch (stage.type)
             {
                 case LoadStageType.Delay:
