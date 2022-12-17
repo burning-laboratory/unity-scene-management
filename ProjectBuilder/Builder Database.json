@@ -9,50 +9,70 @@
     },
     "configurations": [
         {
-            "_expanded": true,
             "name": "[Windows] Demo Application",
-            "targetPlatform": 19,
             "outputFolder": "Windows",
             "artifactName": "Scene Management Demo App",
-            "buildAndroidAppBundle": false,
-            "exportProject": false,
+            "buildTarget": 13,
             "developmentBuild": true,
-            "_scenesExpanded": true,
+            "autoConnectProfiler": false,
+            "deepProfiling": false,
+            "scriptDebugging": false,
+            "waitForManagedDebugger": false,
+            "scriptsOnlyBuild": false,
+            "compressionMethod": 0,
+            "il2CppCodeGeneration": 0,
             "scenes": [
                 {
-                    "_expanded": false,
                     "name": "Splashscreen",
-                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Splashscreen.unity"
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Splashscreen.unity",
+                    "guid": "082fffe2a4249d640affb1b27d533c0a"
                 },
                 {
-                    "_expanded": false,
                     "name": "App Preloader",
-                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Preloaders/App Preloader.unity"
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Preloaders/App Preloader.unity",
+                    "guid": "999c2514c1b660249874f83424d3de76"
                 },
                 {
-                    "_expanded": false,
                     "name": "Main",
-                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/Main.unity"
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/Main.unity",
+                    "guid": "7a72819228f9943459d77f8cfeb0c41a"
                 },
                 {
-                    "_expanded": false,
                     "name": "App Info",
-                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/App Info.unity"
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/App Info.unity",
+                    "guid": "a4095ac18e5c2834aa51c5001dbebf8a"
                 },
                 {
-                    "_expanded": false,
                     "name": "Services",
-                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Services.unity"
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Services.unity",
+                    "guid": "4bf4b0c2d2fe90d41a6156871b8b530e"
                 }
             ],
-            "_definesExpanded": true,
-            "defines": []
+            "defines": [
+                "DEBUG_BURNING_LAB_SDK",
+                "DEBUG_SCENES_SWITCHER"
+            ],
+            "standaloneSubtarget": 0,
+            "standaloneCopyPdbFiles": false,
+            "standaloneCreateVisualStudioSolution": false,
+            "standaloneCreateXCodeProject": false,
+            "standaloneXCodeBuildConfig": 0,
+            "androidSubtarget": 5,
+            "androidETC2Fallback": 0,
+            "exportAsAndroidStudioProject": false,
+            "androidCreateSymbols": 0,
+            "symlinkSources": false,
+            "buildAndroidAppBundle": false,
+            "webGLTextureSubtarget": 0,
+            "webGlCodeOptimization": 0,
+            "iosXCodeBuildConfig": 0,
+            "companyName": "burninglab",
+            "productName": "scenemanagement",
+            "productVersion": "1.0",
+            "applicationIdentifier": "com.burninglab.scenemanagement",
+            "androidBundleVersionCode": 1,
+            "androidMinimumSdkVersion": 22,
+            "androidTargetSdkVersion": 0
         }
-    ],
-    "defines": [
-        "NONE",
-        "DEBUG_BURNING_LAB_SDK",
-        "DEBUG_PROJECT_BUILDER",
-        "DEVELOP_PROJECT_BUILDER"
     ]
 }
