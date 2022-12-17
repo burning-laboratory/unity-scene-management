@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BurningLab.SceneManagement.Database;
 using BurningLab.SceneManagement.Types;
-using Unity.Plastic.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.TutorialApplication.UI
