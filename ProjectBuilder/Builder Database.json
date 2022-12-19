@@ -46,6 +46,16 @@
                     "name": "Services",
                     "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Services.unity",
                     "guid": "4bf4b0c2d2fe90d41a6156871b8b530e"
+                },
+                {
+                    "name": "0 - Tutorial Introduction",
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/0 - Tutorial Introduction.unity",
+                    "guid": "ddd16275b09928447bc1946b3f11fb7e"
+                },
+                {
+                    "name": "1 - General Concepts",
+                    "path": "Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/1 - General Concepts.unity",
+                    "guid": "77047b2e5686f2c419023c97fcdcdb72"
                 }
             ],
             "defines": [
