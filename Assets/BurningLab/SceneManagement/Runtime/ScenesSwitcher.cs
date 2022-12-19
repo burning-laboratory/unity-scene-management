@@ -38,12 +38,12 @@ namespace BurningLab.SceneManagement
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
         [SerializeField]
 #endif
-        private List<SceneData> _loadedScenes;
+        private List<SceneData> _loadedScenes = new();
         
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
         [SerializeField]
 #endif
-        private List<SceneData> _scenesToUnload;
+        private List<SceneData> _scenesToUnload = new();
 
         #endregion
 
