@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4effc069d494e2394c2ef5f9c6a790f, type: 3}
-  m_Name: App Info Scene Data
+  m_Name: Finish Scene Data
   m_EditorClassIdentifier: 
-  _sceneAsset: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/App
-    Info.unity
+  _sceneAsset: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/3
+    -Finish.unity
   _sceneAssetReference:
     m_AssetGUID: 
     m_SubObjectName: 
@@ -21,6 +21,6 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   _loadPriority: 0
   _assetType: 0
-  _sceneLoadType: 1
+  _sceneLoadType: 0
   _loadMode: 1
-  _activationMode: 1
+  _activationMode: 0

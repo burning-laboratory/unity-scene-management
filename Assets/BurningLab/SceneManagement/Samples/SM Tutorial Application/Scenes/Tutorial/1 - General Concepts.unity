@@ -340,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760b74406d5f425ead986badea2daa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadButton: {fileID: 0}
-  _scenesGroup: {fileID: 0}
+  _loadButton: {fileID: 200720248}
+  _scenesGroup: {fileID: 11400000, guid: fb3a110a075237044b705a66e1ec7852, type: 2}
 --- !u!114 &200720248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,12 +1439,12 @@ MonoBehaviour:
     a game, a scene with an interface, a service scene, etc. Then you can use scene
     groups to simplify the transition between scene groups.
 
-    
 
-    Each group
-    of scenes contains links to several scenes that represent a logical screen.
 
-    
+    Each group of
+    scenes contains links to several scenes that represent a logical screen.
+
+
 
     The
     ScenesSwitcher component has a LoadScenesGroup method, which takes the Scenes

@@ -12,7 +12,7 @@
 
 ## About
 
-Asynchronous scene loading system.
+Asynchronous system for loading and switching scenes for the Unity game engine. Provides components for managing scenes in games, as well as a single interface for loading/unloading local and addressable scenes. Using the scene switcher, you can combine scenes into groups of scenes for more convenient scene management in your Unity project.
 
 ## Installation
 

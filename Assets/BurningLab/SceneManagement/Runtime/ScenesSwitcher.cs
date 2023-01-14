@@ -358,6 +358,9 @@ namespace BurningLab.SceneManagement
 
             foreach (SceneData sceneData in scenesGroup.Scenes)
             {
+                if (_loadedScenes.Contains(sceneData))
+                    continue;
+
                 bool activationMode = sceneData.GetActivationMode();
                 int priority = sceneData.LoadPriority;
             
