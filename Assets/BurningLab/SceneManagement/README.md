@@ -6,13 +6,13 @@
     <img src="https://build.burning-lab.com/app/rest/builds/buildType:id:UnityAssets_ComBurningLabScenemanagement_ProductionBuild/statusIcon.svg" alt="Build Status">
     <a href="https://burning-lab.youtrack.cloud/agiles/131-15/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
     <img src="https://img.shields.io/badge/Engine-2021.3-blueviolet" alt="Unity Version">
-    <img src="https://img.shields.io/badge/Version-0.1.6-blue" alt="Game Version">
+    <img src="https://img.shields.io/badge/Version-0.1.7-blue" alt="Game Version">
     <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
 </p>
 
 ## About
 
-Asynchronous scene loading system.
+Asynchronous system for loading and switching scenes for the Unity game engine. Provides components for managing scenes in games, as well as a single interface for loading/unloading local and addressable scenes. Using the scene switcher, you can combine scenes into groups of scenes for more convenient scene management in your Unity project.
 
 ## Installation
 
