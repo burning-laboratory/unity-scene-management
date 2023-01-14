@@ -12,7 +12,7 @@ public class SimpleAppLoader : MonoBehaviour
     [Header("Settings")] [SerializeField] private float _delay;
     [SerializeField] private List<LoadStage> _stages;
 
-    public int StagesCount => _stages.Count;
+    public int StagesCount => _stages.Count - 2;
 
     public event Action<LoadStage> OnStartStage;
     public event Action<LoadStage> OnEndStage;

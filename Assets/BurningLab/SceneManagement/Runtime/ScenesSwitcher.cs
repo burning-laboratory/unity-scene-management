@@ -38,12 +38,12 @@ namespace BurningLab.SceneManagement
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
         [SerializeField]
 #endif
-        private List<SceneData> _loadedScenes;
+        private List<SceneData> _loadedScenes = new();
         
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
         [SerializeField]
 #endif
-        private List<SceneData> _scenesToUnload;
+        private List<SceneData> _scenesToUnload = new();
 
         #endregion
 
@@ -186,33 +186,33 @@ namespace BurningLab.SceneManagement
                 Scene currentActiveScene = SceneManager.GetActiveScene();
                 UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Active scene changed. From: {previousActiveScene.name}, To: {currentActiveScene.name}", gameObject);
 #endif
-
-                for (int i = _scenesToUnload.Count - 1; i >= 0; i--)
+                
+                if (_mainCameraHandling)
                 {
-                    SceneData sceneData = _scenesToUnload[i];
-                    
-                    if (_mainCameraHandling)
-                    {
-                        SceneManager.MoveGameObjectToScene(_mainCamera, scene);
+                    SceneManager.MoveGameObjectToScene(_mainCamera, scene);
                         
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
-                        UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Main camera moved. From: {previousActiveScene.name}, To: {currentActiveScene.name}", gameObject);
+                    UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Main camera moved. From: {previousActiveScene.name}, To: {currentActiveScene.name}", gameObject);
 #endif
-                    }
-
-                    switch (sceneData.AssetType)
-                    {
-                        case SceneAssetType.LocalAsset:
-                            SceneManager.UnloadSceneAsync(sceneData.SceneAssetName);
-                            break;
-                        
-                        case SceneAssetType.AddressableAsset:
-                            Addressables.UnloadSceneAsync(sceneData.SceneAssetReference.OperationHandle);
-                            break;
-                    }
-
-                    _scenesToUnload.Remove(sceneData);
                 }
+            }
+            
+            for (int i = _scenesToUnload.Count - 1; i >= 0; i--)
+            {
+                SceneData sceneData = _scenesToUnload[i];
+                
+                switch (sceneData.AssetType)
+                {
+                    case SceneAssetType.LocalAsset:
+                        SceneManager.UnloadSceneAsync(sceneData.SceneAssetName);
+                        break;
+                        
+                    case SceneAssetType.AddressableAsset:
+                        Addressables.UnloadSceneAsync(sceneData.SceneAssetReference.OperationHandle);
+                        break;
+                }
+
+                _scenesToUnload.Remove(sceneData);
             }
         }
 
@@ -342,11 +342,25 @@ namespace BurningLab.SceneManagement
 
                 _scenesToUnload.Add(loadedSceneData);
             }
-            
+
+            if (_mainCameraHandling)
+            {
+                bool needChangeActiveScene = _scenesToUnload.Exists(s => s.SceneLoadType == SceneLoadType.Active);
+                bool activeSceneInLoadGroupExists = scenesGroup.Scenes.Exists(s => s.SceneLoadType == SceneLoadType.Active);
+
+                if (needChangeActiveScene && activeSceneInLoadGroupExists == false)
+                {
+                    throw new ArgumentException($"Not found active scene to camera moving in: {scenesGroup.GroupName} scenes group.");
+                }
+            }
+
             ScenesLoadOperation scenesLoadOperation = new ScenesLoadOperation();
 
             foreach (SceneData sceneData in scenesGroup.Scenes)
             {
+                if (_loadedScenes.Contains(sceneData))
+                    continue;
+
                 bool activationMode = sceneData.GetActivationMode();
                 int priority = sceneData.LoadPriority;
             

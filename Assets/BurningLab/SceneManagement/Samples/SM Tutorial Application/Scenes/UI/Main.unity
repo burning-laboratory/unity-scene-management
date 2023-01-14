@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -744,11 +744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 315
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -390
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1670,6 +1670,8 @@ GameObject:
   - component: {fileID: 574843508}
   - component: {fileID: 574843510}
   - component: {fileID: 574843509}
+  - component: {fileID: 574843512}
+  - component: {fileID: 574843511}
   m_Layer: 5
   m_Name: Start tutorial button
   m_TagString: Untagged
@@ -1736,74 +1738,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574843507}
   m_CullTransparentMesh: 1
---- !u!1 &583027545
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583027548}
-  - component: {fileID: 583027547}
-  - component: {fileID: 583027546}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &583027546
+--- !u!114 &574843511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583027545}
+  m_GameObject: {fileID: 574843507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 760b74406d5f425ead986badea2daa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &583027547
+  _loadButton: {fileID: 574843512}
+  _scenesGroup: {fileID: 11400000, guid: a5f464810a1abcc4cba0d1d8db8bd201, type: 2}
+--- !u!114 &574843512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583027545}
+  m_GameObject: {fileID: 574843507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &583027548
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583027545}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 574843509}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &602213540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,7 +3398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3414,7 +3406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3454,11 +3446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1542.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -390
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4321,7 +4313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4329,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4369,11 +4361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -390
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

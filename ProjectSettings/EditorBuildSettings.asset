@@ -22,5 +22,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Services.unity
     guid: 4bf4b0c2d2fe90d41a6156871b8b530e
+  - enabled: 1
+    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/0
+      - Tutorial Introduction.unity
+    guid: ddd16275b09928447bc1946b3f11fb7e
+  - enabled: 1
+    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/1
+      - General Concepts.unity
+    guid: 77047b2e5686f2c419023c97fcdcdb72
+  - enabled: 1
+    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/2
+      -Lets Start.unity
+    guid: fd837ad23929ba64e875d0e882d08d67
+  - enabled: 1
+    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/3
+      -Finish.unity
+    guid: 353a8d0a3a7291b4998f7f583e7c7ab7
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 620e7764eaf6e3942992a87d69258995, type: 2}
