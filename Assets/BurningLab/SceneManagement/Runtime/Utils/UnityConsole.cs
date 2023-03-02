@@ -59,7 +59,7 @@ namespace BurningLab.SceneManagement.Utils
 #if UNITY_EDITOR
             Debug.Log($"{{<b><color=white>Burning-</color><color=lime>Lab</color>.<color=orange>Editor</color></b>}} => [{className}] - (<color=yellow>{methodName}</color>) -> {message}");
 #else
-            Debug.Log($"{moduleName} => [{className}] - ({methodName}) -> {message}");
+            Debug.Log($"{{Burning-Lab.Editor}} => [{className}] - ({methodName}) -> {message}");
 #endif
         }
         
