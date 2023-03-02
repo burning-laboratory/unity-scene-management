@@ -101,6 +101,8 @@ namespace BurningLab.SceneManagement.Database
 
             return false;
         }
+        
+        public void SetScene(string scenePath) => _sceneAsset = scenePath;
 
         #endregion
     }

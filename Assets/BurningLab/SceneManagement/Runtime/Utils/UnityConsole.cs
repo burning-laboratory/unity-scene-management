@@ -54,6 +54,15 @@ namespace BurningLab.SceneManagement.Utils
 #endif
         }
         
+        public static void PrintEditorLog(string className, string methodName, string message)
+        {
+#if UNITY_EDITOR
+            Debug.Log($"{{<b><color=white>Burning-</color><color=lime>Lab</color>.<color=orange>Editor</color></b>}} => [{className}] - (<color=yellow>{methodName}</color>) -> {message}");
+#else
+            Debug.Log($"{moduleName} => [{className}] - ({methodName}) -> {message}");
+#endif
+        }
+        
         /// <summary>
         /// Print log to console.
         /// </summary>

@@ -84,7 +84,18 @@ namespace BurningLab.SceneManagement.Database
 
             throw new ArgumentException($"Not found scenes group with name: {scenesGroupName}", nameof(scenesGroupName));
         }
-
+        
+        /// <summary>
+        /// Check exists scene data for scene asset path.
+        /// </summary>
+        /// <param name="path">Scene asset path.</param>
+        /// <returns>Exists scene data with scene asset path.</returns>
+        public bool SceneDataExists(string path)
+        {
+            SceneData sceneData = _scenes.Find(sd => sd.SceneAssetPath == path);
+            return sceneData != null;
+        }
+        
         #endregion
     }
 }
