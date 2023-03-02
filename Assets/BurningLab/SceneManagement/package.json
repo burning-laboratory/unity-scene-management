@@ -7,6 +7,7 @@
    "documentationUrl": "https://burning-lab.youtrack.cloud/articles/SM-A-1/Scene-Management-Dokumentatsiya",
    "changelogUrl": "https://github.com/burning-laboratory/unity-scene-management/releases",
    "licensesUrl": "https://github.com/burning-laboratory/unity-scene-management/blob/main/LICENSE.txt",
+   "license": "MIT",
    "repository": {
       "type": "git",
       "url": "https://github.com/burning-laboratory/unity-scene-management"
