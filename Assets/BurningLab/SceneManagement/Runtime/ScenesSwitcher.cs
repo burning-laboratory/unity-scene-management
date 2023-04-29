@@ -28,21 +28,9 @@ namespace BurningLab.SceneManagement
         #endregion
 
         #region Private Fields
-
-#if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
-        [Header("Debug fields")]
-        [SerializeField]
-#endif
+        
         private GameObject _mainCamera;
-        
-#if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
-        [SerializeField]
-#endif
         private List<SceneData> _loadedScenes = new();
-        
-#if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
-        [SerializeField]
-#endif
         private List<SceneData> _scenesToUnload = new();
 
         #endregion
