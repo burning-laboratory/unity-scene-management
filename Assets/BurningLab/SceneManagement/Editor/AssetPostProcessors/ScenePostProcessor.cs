@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using BurningLab.SceneManagement.Database;
 using BurningLab.SceneManagement.Utils;
 using UnityEditor;
-using UnityEditor.SceneTemplate;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace BurningLab.SceneManagement.Editor

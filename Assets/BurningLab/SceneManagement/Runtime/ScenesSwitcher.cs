@@ -29,8 +29,19 @@ namespace BurningLab.SceneManagement
 
         #region Private Fields
         
+        /// <summary>
+        /// Main camera reference.
+        /// </summary>
         private GameObject _mainCamera;
+        
+        /// <summary>
+        /// List of current loaded scenes.
+        /// </summary>
         private List<SceneData> _loadedScenes = new();
+        
+        /// <summary>
+        /// List of scenes marked to unloading.
+        /// </summary>
         private List<SceneData> _scenesToUnload = new();
 
         #endregion
@@ -263,6 +274,9 @@ namespace BurningLab.SceneManagement
         /// <returns>Scene load async operations wrapper.</returns>
         public ScenesLoadOperation LoadScene(SceneData sceneData)
         {
+            if (_loadedScenes.Contains(sceneData) && sceneData.SceneReloadPolicy == SceneReloadPolicy.Ignore)
+                return new ScenesLoadOperation();
+
             ScenesLoadOperation scenesLoadOperation = new ScenesLoadOperation();
 
             bool activationMode = sceneData.GetActivationMode();
@@ -346,7 +360,7 @@ namespace BurningLab.SceneManagement
 
             foreach (SceneData sceneData in scenesGroup.Scenes)
             {
-                if (_loadedScenes.Contains(sceneData))
+                if (_loadedScenes.Contains(sceneData) && sceneData.SceneReloadPolicy == SceneReloadPolicy.Ignore)
                     continue;
 
                 bool activationMode = sceneData.GetActivationMode();

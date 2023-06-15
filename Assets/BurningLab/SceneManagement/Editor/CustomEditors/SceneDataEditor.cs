@@ -14,7 +14,8 @@ namespace BurningLab.SceneManagement.Editor
         private SerializedProperty _sceneLoadTypeField;
         private SerializedProperty _loadModeField;
         private SerializedProperty _activationModeField;
-
+        private SerializedProperty _sceneReloadPolicy;
+        
         private void OnEnable()
         {
             _sceneAssetField = serializedObject.FindProperty("_sceneAsset");
@@ -24,6 +25,7 @@ namespace BurningLab.SceneManagement.Editor
             _sceneLoadTypeField = serializedObject.FindProperty("_sceneLoadType");
             _loadModeField = serializedObject.FindProperty("_loadMode");
             _activationModeField = serializedObject.FindProperty("_activationMode");
+            _sceneReloadPolicy = serializedObject.FindProperty("_sceneReloadPolicy");
         }
 
         public override void OnInspectorGUI()
@@ -50,6 +52,8 @@ namespace BurningLab.SceneManagement.Editor
             EditorGUILayout.PropertyField(_sceneLoadTypeField);
             EditorGUILayout.PropertyField(_loadModeField);
             EditorGUILayout.PropertyField(_activationModeField);
+
+            EditorGUILayout.PropertyField(_sceneReloadPolicy);
             
             serializedObject.ApplyModifiedProperties();
         }
