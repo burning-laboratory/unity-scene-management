@@ -15,12 +15,14 @@ namespace BurningLab.SceneManagement.Database
     {
         #region Settings
         
+        [Header("Scene asset")]
         [Tooltip("Reference to scene asset.")]
         [SerializeField, SceneAssetField] private string _sceneAsset;
 
         [Tooltip("Reference to addressable scene asset.")]
         [SerializeField] private AssetReference _sceneAssetReference;
-
+        
+        [Header("Loading settings")]
         [Tooltip("Scene loading priority.")]
         [SerializeField] private int _loadPriority;
         
@@ -35,6 +37,10 @@ namespace BurningLab.SceneManagement.Database
 
         [Tooltip("Scene activation mode. Auto activation or manual activation.")]
         [SerializeField] private ActivationMode _activationMode;
+
+        [Header("Other settings")]
+        [Tooltip("Policy for scene reloading. Ignore or Allow scene reload.")]
+        [SerializeField] private SceneReloadPolicy _sceneReloadPolicy;
         
         #endregion
 
@@ -79,7 +85,12 @@ namespace BurningLab.SceneManagement.Database
         /// Scene activation mode. Auto or Manual.
         /// </summary>
         public ActivationMode ActivationMode => _activationMode;
-
+        
+        /// <summary>
+        /// Policy for scene reloading. Ignore or Allow scene reload.
+        /// </summary>
+        public SceneReloadPolicy SceneReloadPolicy => _sceneReloadPolicy;
+        
         #endregion
 
         #region Public Methods
