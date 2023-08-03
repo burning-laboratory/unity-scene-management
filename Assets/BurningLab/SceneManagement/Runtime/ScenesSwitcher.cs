@@ -6,6 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using BurningLab.SceneManagement.Database;
+using BurningLab.SceneManagement;
 using BurningLab.SceneManagement.Types;
 using BurningLab.SceneManagement.Utils;
 
@@ -17,11 +18,18 @@ namespace BurningLab.SceneManagement
     public class ScenesSwitcher : MonoBehaviour
     {
         #region Settings
-
-        [Header("Settings")] 
-        [Tooltip("Scenes database asset reference.")]
-        [SerializeField] private ScenesDatabase _database;
         
+        [Header("Providers")]
+        [Tooltip("Scenes database provider instance.")]
+        [SerializeReference, SubclassSelector] private IScenesDatabaseProvider _scenesDatabaseProvider;
+        
+        [Tooltip("Scenes groups database provider instance.")]
+        [SerializeReference, SubclassSelector] private IScenesGroupDatabaseProvider _scenesGroupDatabaseProvider;
+        
+        [Tooltip("Scenes management configuration provider instance.")]
+        [SerializeReference, SubclassSelector] private IScenesManagementConfigurationProvider _configurationProvider;
+        
+        [Header("Settings")]
         [Tooltip("Auto moving main camera game object to active scene.")]
         [SerializeField] private bool _mainCameraHandling;
         
@@ -37,13 +45,28 @@ namespace BurningLab.SceneManagement
         /// <summary>
         /// List of current loaded scenes.
         /// </summary>
-        private List<SceneData> _loadedScenes = new();
+        private List<ISceneData> _loadedScenes = new();
         
         /// <summary>
         /// List of scenes marked to unloading.
         /// </summary>
-        private List<SceneData> _scenesToUnload = new();
+        private List<ISceneData> _scenesToUnload = new();
+        
+        /// <summary>
+        /// Reference to active scenes database.
+        /// </summary>
+        private IScenesDatabase _scenesDatabase;
+        
+        /// <summary>
+        /// Reference to active scenes group database.
+        /// </summary>
+        private IScenesGroupDatabase _scenesGroupDatabase;
 
+        /// <summary>
+        /// Reference to active scene management system configuration.
+        /// </summary>
+        private IScenesManagementConfiguration _scenesManagementConfiguration;
+        
         #endregion
 
         #region Public Fields
@@ -62,12 +85,16 @@ namespace BurningLab.SceneManagement
         /// <summary>
         /// Loaded scenes list.
         /// </summary>
-        public List<SceneData> LoadedScenes => _loadedScenes;
+        public List<ISceneData> LoadedScenes => _loadedScenes;
 
         /// <summary>
         /// Scenes database reference.
         /// </summary>
-        public ScenesDatabase Database => _database;
+        public IScenesDatabase ScenesDatabase => _scenesDatabase;
+
+        public IScenesGroupDatabase ScenesGroupDatabase => _scenesGroupDatabase;
+
+        public IScenesManagementConfiguration Configuration => _scenesManagementConfiguration;
         
         #endregion
 
@@ -76,12 +103,12 @@ namespace BurningLab.SceneManagement
         /// <summary>
         /// Scene loaded event.
         /// </summary>
-        public event Action<SceneData> OnSceneLoaded;
+        public event Action<ISceneData> OnSceneLoaded;
         
         /// <summary>
         /// Scene unloaded event.
         /// </summary>
-        public event Action<SceneData> OnSceneUnloaded; 
+        public event Action<ISceneData> OnSceneUnloaded; 
 
         #endregion
         
@@ -89,6 +116,14 @@ namespace BurningLab.SceneManagement
 
         private void Awake()
         {
+            #region Get Database
+
+            _scenesDatabase = _scenesDatabaseProvider.GetScenesDatabase();
+            _scenesGroupDatabase = _scenesGroupDatabaseProvider.GetScenesGroupDatabase();
+            _scenesManagementConfiguration = _configurationProvider.GetConfiguration();
+            
+            #endregion
+            
             #region Create static instance.
 
             if (_instance == null)
@@ -125,7 +160,7 @@ namespace BurningLab.SceneManagement
                 Scene scene = SceneManager.GetSceneAt(i);
                 if (scene.isLoaded)
                 {
-                    SceneData loadedSceneData = _database.GetSceneDataByName(scene.name);
+                    ISceneData loadedSceneData = _scenesDatabase.GetSceneDataByName(scene.name);
                     _loadedScenes.Add(loadedSceneData);
                 }
             }
@@ -164,16 +199,18 @@ namespace BurningLab.SceneManagement
         
         private void OnSceneLoadedEventHandler(Scene scene, LoadSceneMode mode)
         {
-            SceneData loadedSceneData = _database.GetSceneDataByName(scene.name);
+            ISceneData loadedSceneData = _scenesDatabase.GetSceneDataByName(scene.name);
             _loadedScenes.Add(loadedSceneData);
             
             OnSceneLoaded?.Invoke(loadedSceneData);
             
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
-            UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Scene loaded: {loadedSceneData.SceneAssetName}", gameObject);
+            string loadedSceneName = loadedSceneData.GetSceneAssetName();
+            UnityConsole.PrintLog("ScenesSwitcher", "OnSceneLoadedEventHandler", $"Scene loaded: {loadedSceneName}", gameObject);
 #endif
 
-            if (loadedSceneData.SceneLoadType == SceneLoadType.Active)
+            SceneLoadType sceneLoadType = loadedSceneData.GetSceneLoadType();
+            if (sceneLoadType == SceneLoadType.Active)
             {
 #if DEBUG_BURNING_LAB_SDK || DEBUG_SCENES_SWITCHER
                 Scene previousActiveScene = SceneManager.GetActiveScene();
@@ -198,16 +235,19 @@ namespace BurningLab.SceneManagement
             
             for (int i = _scenesToUnload.Count - 1; i >= 0; i--)
             {
-                SceneData sceneData = _scenesToUnload[i];
-                
-                switch (sceneData.AssetType)
+                ISceneData sceneData = _scenesToUnload[i];
+
+                SceneAssetType sceneAssetType = sceneData.GetSceneAssetType();
+                switch (sceneAssetType)
                 {
                     case SceneAssetType.LocalAsset:
-                        SceneManager.UnloadSceneAsync(sceneData.SceneAssetName);
+                        string sceneName = sceneData.GetSceneAssetName();
+                        SceneManager.UnloadSceneAsync(sceneName);
                         break;
                         
                     case SceneAssetType.AddressableAsset:
-                        Addressables.UnloadSceneAsync(sceneData.SceneAssetReference.OperationHandle);
+                        AssetReference addressableSceneReference = sceneData.GetSceneAssetReference();
+                        Addressables.UnloadSceneAsync(addressableSceneReference.OperationHandle);
                         break;
                 }
 
@@ -217,7 +257,7 @@ namespace BurningLab.SceneManagement
 
         private void OnSceneUnloadedEventHandler(Scene scene)
         {
-            SceneData unloadedSceneData = _database.GetSceneDataByName(scene.name);
+            ISceneData unloadedSceneData = _scenesDatabase.GetSceneDataByName(scene.name);
             _loadedScenes.Remove(unloadedSceneData);
             
             OnSceneUnloaded?.Invoke(unloadedSceneData);
@@ -237,16 +277,19 @@ namespace BurningLab.SceneManagement
         /// Unload scene.
         /// </summary>
         /// <param name="sceneData">Scene data.</param>
-        public void UnloadScene(SceneData sceneData)
+        public void UnloadScene(ISceneData sceneData)
         {
-            switch (sceneData.AssetType)
+            SceneAssetType sceneAssetType = sceneData.GetSceneAssetType();
+            switch (sceneAssetType)
             {
                 case SceneAssetType.LocalAsset:
-                    SceneManager.UnloadSceneAsync(sceneData.SceneAssetName);
+                    string sceneName = sceneData.GetSceneAssetName();
+                    SceneManager.UnloadSceneAsync(sceneName);
                     break;
                 
                 case SceneAssetType.AddressableAsset:
-                    Addressables.UnloadSceneAsync(sceneData.SceneAssetReference.OperationHandle);
+                    AssetReference addressableSceneReference = sceneData.GetSceneAssetReference();
+                    Addressables.UnloadSceneAsync(addressableSceneReference.OperationHandle);
                     break;
             }
         }
@@ -272,27 +315,32 @@ namespace BurningLab.SceneManagement
         /// </summary>
         /// <param name="sceneData">Single scene data to load.</param>
         /// <returns>Scene load async operations wrapper.</returns>
-        public ScenesLoadOperation LoadScene(SceneData sceneData)
+        public ScenesLoadOperation LoadScene(ISceneData sceneData)
         {
-            if (_loadedScenes.Contains(sceneData) && sceneData.SceneReloadPolicy == SceneReloadPolicy.Ignore)
+            SceneReloadPolicy sceneReloadPolicy = sceneData.GetSceneReloadPolicy();
+            if (_loadedScenes.Contains(sceneData) && sceneReloadPolicy == SceneReloadPolicy.Ignore)
                 return new ScenesLoadOperation();
 
             ScenesLoadOperation scenesLoadOperation = new ScenesLoadOperation();
 
-            bool activationMode = sceneData.GetActivationMode();
-            int priority = sceneData.LoadPriority;
+            bool activationMode = sceneData.GetActivationModeAsBool();
+            int priority = sceneData.GetSceneLoadPriority();
+            LoadSceneMode loadSceneMode = sceneData.GetSceneLoadMode();
             
-            switch (sceneData.AssetType)
+            SceneAssetType sceneAssetType = sceneData.GetSceneAssetType();
+            switch (sceneAssetType)
             {
                 case SceneAssetType.LocalAsset:
-                    AsyncOperation loadSceneOperation = SceneManager.LoadSceneAsync(sceneData.SceneAssetName, sceneData.LoadMode);
+                    string sceneName = sceneData.GetSceneAssetName();
+                    AsyncOperation loadSceneOperation = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
                     loadSceneOperation.allowSceneActivation = activationMode;
                     loadSceneOperation.priority = priority;
                     scenesLoadOperation.RegisterSceneLoadAsyncOperation(sceneData, loadSceneOperation);
                     break;
                 
                 case SceneAssetType.AddressableAsset:
-                    AsyncOperationHandle<SceneInstance> loadSceneOperationHandle = sceneData.SceneAssetReference.LoadSceneAsync(sceneData.LoadMode, activationMode, priority);
+                    AssetReference addressableSceneReference = sceneData.GetSceneAssetReference();
+                    AsyncOperationHandle<SceneInstance> loadSceneOperationHandle = addressableSceneReference.LoadSceneAsync(loadSceneMode, activationMode, priority);
                     scenesLoadOperation.RegisterSceneLoadAsyncOperationHandle(sceneData, loadSceneOperationHandle);
                     break;
             }
@@ -307,7 +355,7 @@ namespace BurningLab.SceneManagement
         /// <returns>Scenes load async operation wrapper.</returns>
         public ScenesLoadOperation LoadScene(string sceneName)
         {
-            SceneData sceneData = _database.GetSceneDataByName(sceneName);
+            ISceneData sceneData = _scenesDatabase.GetSceneDataByName(sceneName);
             ScenesLoadOperation loadOperation = LoadScene(sceneData);
             return loadOperation;
         }
@@ -321,7 +369,7 @@ namespace BurningLab.SceneManagement
         {
             Scene targetScene = SceneManager.GetSceneByBuildIndex(sceneBuildIndex);
             string sceneName = targetScene.name;
-            SceneData targetSceneData = _database.GetSceneDataByName(sceneName);
+            ISceneData targetSceneData = _scenesDatabase.GetSceneDataByName(sceneName);
             ScenesLoadOperation loadOperation = LoadScene(targetSceneData);
             return loadOperation;
         }
@@ -335,48 +383,61 @@ namespace BurningLab.SceneManagement
         /// </summary>
         /// <param name="scenesGroup">Scenes group to load.</param>
         /// <returns>Scene load async operations wrapper.</returns>
-        public ScenesLoadOperation LoadScenesGroup(ScenesGroup scenesGroup)
+        public ScenesLoadOperation LoadScenesGroup(IScenesGroup scenesGroup)
         {
-            foreach (SceneData loadedSceneData in _loadedScenes)
+            foreach (ISceneData loadedSceneData in _loadedScenes)
             {
-                if (_database.AlwaysLoadedScenes.Contains(loadedSceneData))
+                List<ISceneData> alwaysLoadedScenes = _scenesManagementConfiguration.GetAlwaysLoadedScenes();
+                if (alwaysLoadedScenes.Contains(loadedSceneData))
                     continue;
 
                 _scenesToUnload.Add(loadedSceneData);
             }
 
+            List<ISceneData> scenesListInGroup = scenesGroup.GetScenes();
             if (_mainCameraHandling)
             {
-                bool needChangeActiveScene = _scenesToUnload.Exists(s => s.SceneLoadType == SceneLoadType.Active);
-                bool activeSceneInLoadGroupExists = scenesGroup.Scenes.Exists(s => s.SceneLoadType == SceneLoadType.Active);
+                bool needChangeActiveScene = _scenesToUnload.Exists(s => {
+                    SceneLoadType sceneLoadType = s.GetSceneLoadType();
+                    return sceneLoadType == SceneLoadType.Active;
+                });
+                bool activeSceneInLoadGroupExists = scenesListInGroup.Exists(s => {
+                    SceneLoadType sceneLoadType = s.GetSceneLoadType();
+                    return sceneLoadType == SceneLoadType.Active;
+                });
 
                 if (needChangeActiveScene && activeSceneInLoadGroupExists == false)
                 {
-                    throw new ArgumentException($"Not found active scene to camera moving in: {scenesGroup.GroupName} scenes group.");
+                    string scenesGroupName = scenesGroup.GetScenesGroupName();
+                    throw new ArgumentException($"Not found active scene to camera moving in: {scenesGroupName} scenes group.");
                 }
             }
 
             ScenesLoadOperation scenesLoadOperation = new ScenesLoadOperation();
-
-            foreach (SceneData sceneData in scenesGroup.Scenes)
+            foreach (ISceneData sceneData in scenesListInGroup)
             {
-                if (_loadedScenes.Contains(sceneData) && sceneData.SceneReloadPolicy == SceneReloadPolicy.Ignore)
+                SceneReloadPolicy sceneReloadPolicy = sceneData.GetSceneReloadPolicy();
+                if (_loadedScenes.Contains(sceneData) && sceneReloadPolicy == SceneReloadPolicy.Ignore)
                     continue;
 
-                bool activationMode = sceneData.GetActivationMode();
-                int priority = sceneData.LoadPriority;
-            
-                switch (sceneData.AssetType)
+                bool activationMode = sceneData.GetActivationModeAsBool();
+                int priority = sceneData.GetSceneLoadPriority();
+                LoadSceneMode loadSceneMode = sceneData.GetSceneLoadMode();
+                
+                SceneAssetType sceneAssetType = sceneData.GetSceneAssetType();
+                switch (sceneAssetType)
                 {
                     case SceneAssetType.LocalAsset:
-                        AsyncOperation loadSceneOperation = SceneManager.LoadSceneAsync(sceneData.SceneAssetName, sceneData.LoadMode);
+                        string sceneName = sceneData.GetSceneAssetName();
+                        AsyncOperation loadSceneOperation = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
                         loadSceneOperation.allowSceneActivation = activationMode;
                         loadSceneOperation.priority = priority;
                         scenesLoadOperation.RegisterSceneLoadAsyncOperation(sceneData, loadSceneOperation);
                         break;
                 
                     case SceneAssetType.AddressableAsset:
-                        AsyncOperationHandle<SceneInstance> loadSceneOperationHandle = sceneData.SceneAssetReference.LoadSceneAsync(sceneData.LoadMode, activationMode, priority);
+                        AssetReference addressableSceneReference = sceneData.GetSceneAssetReference();
+                        AsyncOperationHandle<SceneInstance> loadSceneOperationHandle = addressableSceneReference.LoadSceneAsync(loadSceneMode, activationMode, priority);
                         scenesLoadOperation.RegisterSceneLoadAsyncOperationHandle(sceneData, loadSceneOperationHandle);
                         break;
                 }
