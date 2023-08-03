@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -608,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -648,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 429.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943475181572527134, guid: c7ab5579e8ffa5346a6b56ffab9f02c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -915,8 +915,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760b74406d5f425ead986badea2daa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadButton: {fileID: 0}
-  _scenesGroup: {fileID: 11400000, guid: a7fa0bae1ecd5474b9f80249ccebb1f5, type: 2}
+  _loadButton: {fileID: 6111618422699176819}
+  _scenesGroupReference:
+    rid: 3113576181401649175
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649175
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: General Concepts Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 96372307868c118479101b9489090db7, type: 2}
 --- !u!114 &6111618422699176819
 MonoBehaviour:
   m_ObjectHideFlags: 0

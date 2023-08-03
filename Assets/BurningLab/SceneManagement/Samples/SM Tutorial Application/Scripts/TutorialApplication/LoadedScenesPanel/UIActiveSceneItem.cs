@@ -9,9 +9,10 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
         [Header("Components")] 
         [SerializeField] private TMP_Text _textField;
 
-        public void Init(SceneData sceneData)
+        public void Init(ISceneData sceneData)
         {
-            _textField.SetText(sceneData.SceneAssetName);
+            string sceneName = sceneData.GetSceneAssetName();
+            _textField.SetText(sceneName);
         }
     }
 }

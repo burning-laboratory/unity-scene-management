@@ -43,7 +43,7 @@ public class SimpleAppLoader : MonoBehaviour
                     break;
                 
                 case LoadStageType.LoadScenesGroup: 
-                    _operation = ScenesSwitcher.Instance.LoadScenesGroup(stage.scenesGroup);
+                    _operation = ScenesSwitcher.Instance.LoadScenesGroup(stage.scenesGroup.GetScenesGroup());
                     while (_operation.IsDone == false)
                     {
                         yield return new WaitForSeconds(0.1f);

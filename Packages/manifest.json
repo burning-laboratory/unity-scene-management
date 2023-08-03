@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.burning-lab.projectbuilder": "0.1.12-exp",
+    "com.mackysoft.serializereference-extensions": "1.1.7",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.24",
@@ -50,6 +51,13 @@
       "url": "https://packages.burning-lab.com",
       "scopes": [
         "com.burning-lab"
+      ]
+    },
+    {
+      "name": "Open UPM Registry",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.mackysoft.serializereference-extensions"
       ]
     }
   ]

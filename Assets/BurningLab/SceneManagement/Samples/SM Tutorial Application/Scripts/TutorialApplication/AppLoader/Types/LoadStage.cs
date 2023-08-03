@@ -1,4 +1,5 @@
 ﻿using BurningLab.SceneManagement.Database;
+using UnityEngine;
 
 namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.TutorialApplication.AppLoader.Types
 {
@@ -9,6 +10,6 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
         public LoadStageType type;
         public string sceneName;
         public float delay;
-        public ScenesGroup scenesGroup;
+        [SerializeReference, SubclassSelector] public IScenesGroupReference scenesGroup;
     }
 }

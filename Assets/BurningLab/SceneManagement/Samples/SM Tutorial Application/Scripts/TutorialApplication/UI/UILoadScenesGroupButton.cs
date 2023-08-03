@@ -12,7 +12,7 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
         [SerializeField] private Button _loadButton;
 
         [Header("Settings")] 
-        [SerializeField] private ScenesGroup _scenesGroup;
+        [SerializeReference, SubclassSelector] private IScenesGroupReference _scenesGroupReference;
 
         private void Awake()
         {
@@ -31,7 +31,8 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
 
         private void OnLoadButtonClick()
         {
-            ScenesLoadOperation operation = ScenesSwitcher.Instance.LoadScenesGroup(_scenesGroup);
+            IScenesGroup targetScenesGroup = _scenesGroupReference.GetScenesGroup();
+            ScenesLoadOperation operation = ScenesSwitcher.Instance.LoadScenesGroup(targetScenesGroup);
             operation.ActivateScenes();
         }
     }

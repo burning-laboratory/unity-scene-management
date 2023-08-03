@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77762933d94453882b7b83d94c3257b, type: 3}
+  m_Name: Local Scenes Database
+  m_EditorClassIdentifier: 
+  _scenes:
+  - rid: 3113576181401649167
+  - rid: 3113576181401649157
+  - rid: 3113576181401649168
+  - rid: 3113576181401649158
+  - rid: 3113576181401649182
+  - rid: 3113576181401649183
+  - rid: 3113576181401649184
+  - rid: 3113576181401649185
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649157
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Services Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 2c53aadef2fd208499d76471ca42ce99, type: 2}
+    - rid: 3113576181401649158
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Main Scene Data
+        _targetSceneData: {fileID: 11400000, guid: a0ce92363632df044af418ae4cfc7916, type: 2}
+    - rid: 3113576181401649167
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: App Preloader Scene Data
+        _targetSceneData: {fileID: 11400000, guid: be92ee494f8b61244968bfc90e456ded, type: 2}
+    - rid: 3113576181401649168
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: App Info Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 5d8a0c2a8da545443854c4f76f1fe739, type: 2}
+    - rid: 3113576181401649182
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: 0 - Tutorial Introduction Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 5d65da1ba8fc9ad4a8e37ee0b99013bc, type: 2}
+    - rid: 3113576181401649183
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: 1 - General Concepts Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 98a5781a9233de4429e442da6a999e40, type: 2}
+    - rid: 3113576181401649184
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: 2 - Lets Start Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 32ba4d7912bcca348b3f11d96da57b95, type: 2}
+    - rid: 3113576181401649185
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: 3 - Finish Scene Data
+        _targetSceneData: {fileID: 11400000, guid: 3dc26c210a7706b4d978e644fa4390be, type: 2}

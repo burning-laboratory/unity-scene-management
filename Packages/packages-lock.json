@@ -9,6 +9,13 @@
       },
       "url": "https://packages.burning-lab.com"
     },
+    "com.mackysoft.serializereference-extensions": {
+      "version": "1.1.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.9",
       "depth": 1,

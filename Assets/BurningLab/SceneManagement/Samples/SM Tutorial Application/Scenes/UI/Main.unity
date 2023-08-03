@@ -822,7 +822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d9e78a199449529d63d3657a78671f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _database: {fileID: 11400000, guid: a972280363f826a46a21b51a2f79ae7c, type: 2}
   _alwaysLoadedScenesCountTextField: {fileID: 1892633876}
   _totalScenesCountTextField: {fileID: 521287850}
   _scenesGroupCountTextField: {fileID: 10799115}
@@ -1751,7 +1750,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadButton: {fileID: 574843512}
-  _scenesGroup: {fileID: 11400000, guid: a5f464810a1abcc4cba0d1d8db8bd201, type: 2}
+  _scenesGroupReference:
+    rid: 3113576181401649181
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649181
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Tutorial introduction Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 064bf863f359ffd4f907a17be9d42cd1, type: 2}
 --- !u!114 &574843512
 MonoBehaviour:
   m_ObjectHideFlags: 0

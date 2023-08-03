@@ -340,7 +340,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadButton: {fileID: 200720248}
-  _scenesGroup: {fileID: 11400000, guid: a235d9c118b564a43aa6dd3fa2159599, type: 2}
+  _scenesGroupReference:
+    rid: 3113576181401649179
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649179
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Finish Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 87f7496c0faec30458326005f912c6ed, type: 2}
 --- !u!114 &200720248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +672,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadButton: {fileID: 549668636}
-  _scenesGroup: {fileID: 11400000, guid: a7fa0bae1ecd5474b9f80249ccebb1f5, type: 2}
+  _scenesGroupReference:
+    rid: 3113576181401649178
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649178
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: General Concepts Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 96372307868c118479101b9489090db7, type: 2}
 --- !u!114 &549668636
 MonoBehaviour:
   m_ObjectHideFlags: 0

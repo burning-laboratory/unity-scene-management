@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using BurningLab.SceneManagement.Database;
 using BurningLab.SceneManagement.Types;
 using TMPro;
@@ -9,8 +9,10 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
     public class UIDatabaseStatsDrawer : MonoBehaviour
     {
         [Header("Components")] 
-        [SerializeField] private ScenesDatabase _database;
-
+        [SerializeField] private IScenesDatabase _scenesDatabase;
+        [SerializeField] private IScenesManagementConfiguration _configuration;
+        [SerializeField] private IScenesGroupDatabase _scenesGroupDatabase;
+        
         [Header("Text fields")] 
         [SerializeField] private TMP_Text _alwaysLoadedScenesCountTextField;
         [SerializeField] private TMP_Text _totalScenesCountTextField;
@@ -24,31 +26,57 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
 
         private void Start()
         {
-            int alwaysLoadedScenesCount = _database.AlwaysLoadedScenes.Count;
+            _scenesDatabase = ScenesSwitcher.Instance.ScenesDatabase;
+            _configuration = ScenesSwitcher.Instance.Configuration;
+            _scenesGroupDatabase = ScenesSwitcher.Instance.ScenesGroupDatabase;
+            
+            List<ISceneData> alwaysLoadedScenes = _configuration.GetAlwaysLoadedScenes();
+            int alwaysLoadedScenesCount = alwaysLoadedScenes.Count;
             _alwaysLoadedScenesCountTextField.SetText(alwaysLoadedScenesCount.ToString());
 
-            int scenesCount = _database.Scenes.Count;
+            List<ISceneData> scenes = _scenesDatabase.GetScenes();
+            int scenesCount = scenes.Count;
             _totalScenesCountTextField.SetText(scenesCount.ToString());
-            
-            int scenesGroupsCount = _database.SceneGroups.Count;
+
+            List<IScenesGroup> scenesGroups = _scenesGroupDatabase.GetScenesGroups();
+            int scenesGroupsCount = scenesGroups.Count;
             _scenesGroupCountTextField.SetText(scenesGroupsCount.ToString());
 
-            int localScenesCount = _database.Scenes.FindAll(sd => sd.AssetType == SceneAssetType.LocalAsset).Count;
+            
+            int localScenesCount = scenes.FindAll(sd => {
+                SceneAssetType sceneAssetType = sd.GetSceneAssetType();
+                return sceneAssetType == SceneAssetType.LocalAsset;
+            }).Count;
             _localScenesCountTextField.SetText(localScenesCount.ToString());
             
-            int addressableScenesCount = _database.Scenes.FindAll(sd => sd.AssetType == SceneAssetType.AddressableAsset).Count;
+            int addressableScenesCount = scenes.FindAll(sd => {
+                SceneAssetType sceneAssetType = sd.GetSceneAssetType();
+                return sceneAssetType == SceneAssetType.AddressableAsset;
+            }).Count;
             _addressableScenesCountTextField.SetText(addressableScenesCount.ToString());
-
-            int activeScenesCount = _database.Scenes.FindAll(sd => sd.SceneLoadType == SceneLoadType.Active).Count;
+            
+            int activeScenesCount = scenes.FindAll(sd => {
+                SceneLoadType sceneLoadType = sd.GetSceneLoadType();
+                return sceneLoadType == SceneLoadType.Active;
+            }).Count;
             _activeScenesCountTextField.SetText(activeScenesCount.ToString());
             
-            int additionalScenesCount = _database.Scenes.FindAll(sd => sd.SceneLoadType == SceneLoadType.Additional).Count;
+            int additionalScenesCount = scenes.FindAll(sd => {
+                SceneLoadType sceneLoadType = sd.GetSceneLoadType();
+                return sceneLoadType == SceneLoadType.Additional;
+            }).Count;
             _additionalScenesCountTextField.SetText(additionalScenesCount.ToString());
             
-            int autoActivationScenesCount = _database.Scenes.FindAll(sd => sd.ActivationMode == ActivationMode.Auto).Count;
+            int autoActivationScenesCount = scenes.FindAll(sd => {
+                SceneActivationMode sceneActivationMode = sd.GetActivationMode();
+                return sceneActivationMode == SceneActivationMode.Auto;
+            }).Count;
             _autoActivationScenesCountTextField.SetText(autoActivationScenesCount.ToString());
             
-            int manualActivationScenesCount = _database.Scenes.FindAll(sd => sd.ActivationMode == ActivationMode.Manual).Count;
+            int manualActivationScenesCount = scenes.FindAll(sd => {
+                SceneActivationMode sceneActivationMode = sd.GetActivationMode();
+                return sceneActivationMode == SceneActivationMode.Manual;
+            }).Count;
             _manualActivationScenesCountTextField.SetText(manualActivationScenesCount.ToString());
         }
     }

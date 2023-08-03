@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c146471807b2427781bc882c5c43ef68, type: 3}
+  m_Name: 0 - Tutorial Introduction Scenes Group
+  m_EditorClassIdentifier: 
+  _groupName: Tutorial Introduction
+  _sceneDataReferences:
+  - rid: 3113576181401649170
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649170
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Tutorial Introduction scene
+        _targetSceneData: {fileID: 11400000, guid: 5d65da1ba8fc9ad4a8e37ee0b99013bc, type: 2}

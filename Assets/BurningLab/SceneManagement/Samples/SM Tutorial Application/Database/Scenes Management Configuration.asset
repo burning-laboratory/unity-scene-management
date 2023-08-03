@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be0d86a42a54fe19f21256d02c22261, type: 3}
+  m_Name: Scenes Management Configuration
+  m_EditorClassIdentifier: 
+  _alwaysLoadedScenes:
+  - rid: 3113576181401649162
+  - rid: 3113576181401649161
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649161
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: App Info scene
+        _targetSceneData: {fileID: 11400000, guid: 5d8a0c2a8da545443854c4f76f1fe739, type: 2}
+    - rid: 3113576181401649162
+      type: {class: LocalSceneDataReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Services scene
+        _targetSceneData: {fileID: 11400000, guid: 2c53aadef2fd208499d76471ca42ce99, type: 2}

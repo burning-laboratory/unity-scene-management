@@ -965,37 +965,53 @@ MonoBehaviour:
     type: 0
     sceneName: 
     delay: 2
-    scenesGroup: {fileID: 0}
+    scenesGroup:
+      rid: -2
   - stageName: Load services scene
     type: 1
     sceneName: Services
     delay: 0
-    scenesGroup: {fileID: 0}
+    scenesGroup:
+      rid: -2
   - stageName: Delay after load
     type: 0
     sceneName: 
     delay: 2
-    scenesGroup: {fileID: 0}
+    scenesGroup:
+      rid: -2
   - stageName: Load main scenes group
     type: 2
     sceneName: 
     delay: 0
-    scenesGroup: {fileID: 11400000, guid: c3d78dc84e1799b43b7383f87eb27ac7, type: 2}
+    scenesGroup:
+      rid: 3113576181401649166
   - stageName: Delay after load
     type: 0
     sceneName: 
     delay: 2
-    scenesGroup: {fileID: 0}
+    scenesGroup:
+      rid: -2
   - stageName: Press Any Key
     type: 4
     sceneName: 
     delay: 0
-    scenesGroup: {fileID: 0}
+    scenesGroup:
+      rid: -2
   - stageName: Scenes group activation
     type: 3
     sceneName: 
     delay: 1
-    scenesGroup: {fileID: 11400000, guid: c3d78dc84e1799b43b7383f87eb27ac7, type: 2}
+    scenesGroup:
+      rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3113576181401649166
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _targetScenesGroup: {fileID: 11400000, guid: c3d78dc84e1799b43b7383f87eb27ac7, type: 2}
 --- !u!4 &1969316923
 Transform:
   m_ObjectHideFlags: 0

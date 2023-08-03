@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60955fda3e44b5d9209249eff35b527, type: 3}
+  m_Name: Local Scenes Group Database
+  m_EditorClassIdentifier: 
+  _sceneGroups:
+  - rid: 3113576181401649160
+  - rid: 3113576181401649171
+  - rid: 3113576181401649172
+  - rid: 3113576181401649173
+  - rid: 3113576181401649174
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576181401649160
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Main Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: c3d78dc84e1799b43b7383f87eb27ac7, type: 2}
+    - rid: 3113576181401649171
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Tutorial Introduction Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 064bf863f359ffd4f907a17be9d42cd1, type: 2}
+    - rid: 3113576181401649172
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: General Concepts Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 96372307868c118479101b9489090db7, type: 2}
+    - rid: 3113576181401649173
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Lets Start Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 17102f8b0bad99e4c813ee6523e3c089, type: 2}
+    - rid: 3113576181401649174
+      type: {class: LocalScenesGroupReference, ns: BurningLab.SceneManagement.Extensions.LocalScenesDatabaseExtension, asm: Burning-Lab.SceneManagement.Extensions.LocalScenesDatabaseExtension}
+      data:
+        _displayName: Finish Scenes Group
+        _targetScenesGroup: {fileID: 11400000, guid: 87f7496c0faec30458326005f912c6ed, type: 2}

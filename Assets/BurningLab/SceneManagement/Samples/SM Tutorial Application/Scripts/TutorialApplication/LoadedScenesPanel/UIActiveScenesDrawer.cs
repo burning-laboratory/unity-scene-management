@@ -16,26 +16,28 @@ namespace BurningLab.SceneManagement.Samples.SM_Tutorial_Application.Scripts.Tut
         [SerializeField] private UIActiveSceneItem _alwaysLoadedScenePrefab;
         [SerializeField] private UIActiveSceneItem _activeScenePrefab;
 
-        private void OnScenesChangedEventHandler(SceneData sd)
+        private void OnScenesChangedEventHandler(ISceneData sd)
         {
             foreach (UIActiveSceneItem item in _items)
             {
                 Destroy(item);
             }
             
-            List<SceneData> loadedScenes = ScenesSwitcher.Instance.LoadedScenes;
+            List<ISceneData> loadedScenes = ScenesSwitcher.Instance.LoadedScenes;
             for (int i = loadedScenes.Count - 1; i >= 0; i--)
             {
-                SceneData sceneData = loadedScenes[i];
+                ISceneData sceneData = loadedScenes[i];
 
-                if (ScenesSwitcher.Instance.Database.AlwaysLoadedScenes.Contains(sceneData))
+                List<ISceneData> alwaysLoadedScene = ScenesSwitcher.Instance.Configuration.GetAlwaysLoadedScenes();
+                if (alwaysLoadedScene.Contains(sceneData))
                 {
                     UIActiveSceneItem activeSceneItem = Instantiate(_alwaysLoadedScenePrefab.gameObject, _listContainer).GetComponent<UIActiveSceneItem>();
                     activeSceneItem.Init(sceneData);
                     continue;
                 }
-                
-                switch (sceneData.SceneLoadType)
+
+                SceneLoadType sceneLoadType = sceneData.GetSceneLoadType();
+                switch (sceneLoadType)
                 {
                     case SceneLoadType.Active:
                         UIActiveSceneItem activeSceneItem = Instantiate(_activeScenePrefab.gameObject, _listContainer).GetComponent<UIActiveSceneItem>();
