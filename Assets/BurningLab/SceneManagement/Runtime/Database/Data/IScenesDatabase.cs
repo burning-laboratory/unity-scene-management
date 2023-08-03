@@ -16,9 +16,9 @@ namespace BurningLab.SceneManagement.Database
         /// <summary>
         /// Return scene data by name.
         /// </summary>
-        /// <param name="sceneDataName">Target scene data name.</param>
+        /// <param name="sceneName">Target scene data name.</param>
         /// <returns>Scene data with requested name.</returns>
-        public ISceneData GetSceneDataByName(string sceneDataName);
+        public ISceneData GetSceneDataByName(string sceneName);
         
         /// <summary>
         /// Return true if scene data with requested path exists.
