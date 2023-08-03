@@ -1,0 +1,51 @@
+{
+  "metadata": [
+    {
+      "namespaceLayout": "nested",
+      "src": [
+        {
+          "files": [
+            "BurningLab.SceneManagement.csproj"
+          ],
+          "src": ".."
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "postProcessors": [],
+    "keepFileLink": false
+  },
+  "namespaceLayout": "nested"
+}

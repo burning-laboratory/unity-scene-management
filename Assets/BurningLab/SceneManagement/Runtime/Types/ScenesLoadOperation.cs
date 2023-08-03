@@ -22,7 +22,7 @@ namespace BurningLab.SceneManagement.Types
             /// <summary>
             /// Loading scene data.
             /// </summary>
-            public SceneData SceneData;
+            public ISceneData SceneData;
             
             /// <summary>
             /// Loading async operation.
@@ -63,7 +63,8 @@ namespace BurningLab.SceneManagement.Types
             /// <returns>Loading progress.</returns>
             public float GetProgress()
             {
-                switch (SceneData.AssetType)
+                SceneAssetType sceneAssetType = SceneData.GetSceneAssetType();
+                switch (sceneAssetType)
                 {
                     case SceneAssetType.LocalAsset:
                         return GetProgress(AsyncOperation);
@@ -113,7 +114,8 @@ namespace BurningLab.SceneManagement.Types
                 
                 foreach (LoadingScene loadingScene in _loadingScenes)
                 {
-                    switch (loadingScene.SceneData.AssetType)
+                    SceneAssetType sceneAssetType = loadingScene.SceneData.GetSceneAssetType();
+                    switch (sceneAssetType)
                     {
                         case SceneAssetType.LocalAsset:
                             if (loadingScene.AsyncOperation.isDone)
@@ -140,7 +142,7 @@ namespace BurningLab.SceneManagement.Types
         /// </summary>
         /// <param name="sceneData">Loading scene data.</param>
         /// <param name="loadOperation">Local scene load async operation.</param>
-        public void RegisterSceneLoadAsyncOperation(SceneData sceneData, AsyncOperation loadOperation)
+        public void RegisterSceneLoadAsyncOperation(ISceneData sceneData, AsyncOperation loadOperation)
         {
             LoadingScene loadingScene = new LoadingScene
             {
@@ -156,7 +158,7 @@ namespace BurningLab.SceneManagement.Types
         /// </summary>
         /// <param name="sceneData">Loading scene data.</param>
         /// <param name="loadOperation">Addressable scene load async operation handle.</param>
-        public void RegisterSceneLoadAsyncOperationHandle(SceneData sceneData, AsyncOperationHandle<SceneInstance> loadOperation)
+        public void RegisterSceneLoadAsyncOperationHandle(ISceneData sceneData, AsyncOperationHandle<SceneInstance> loadOperation)
         {
             LoadingScene loadingScene = new LoadingScene
             {
@@ -174,7 +176,8 @@ namespace BurningLab.SceneManagement.Types
         {
             foreach (LoadingScene loadingScene in _loadingScenes)
             {
-                switch (loadingScene.SceneData.AssetType)
+                SceneAssetType sceneAssetType = loadingScene.SceneData.GetSceneAssetType();
+                switch (sceneAssetType)
                 {
                     case SceneAssetType.LocalAsset:
                         loadingScene.AsyncOperation.allowSceneActivation = true;
