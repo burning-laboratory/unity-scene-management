@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: DocFX Build
-        working-directory: docs
+        working-directory: Documentation
         run: docfx docfx.json
         continue-on-error: false
       - name: Publish
