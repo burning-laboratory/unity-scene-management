@@ -1,6 +1,6 @@
 ﻿using BurningLab.SceneManagement.Database;
 
-namespace BurningLab.SceneManagement
+namespace BurningLab.SceneManagement.Providers
 {
     /// <summary>
     /// Root scenes groups database provider interface.

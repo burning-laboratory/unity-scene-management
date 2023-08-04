@@ -1,4 +1,6 @@
-﻿namespace BurningLab.SceneManagement.Database
+﻿using BurningLab.SceneManagement.Database;
+
+namespace BurningLab.SceneManagement.References
 {
     /// <summary>
     /// Root interfaces for scene data references implementations.
