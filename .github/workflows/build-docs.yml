@@ -99,7 +99,7 @@ jobs:
         with:
           name: 'UNITY_LICENSE'
           value: '${{ needs.request_alf.outputs.alf }}'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
 
       - name: Run Unity Build
         uses: game-ci/unity-builder@v2
