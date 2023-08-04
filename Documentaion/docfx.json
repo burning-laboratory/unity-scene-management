@@ -5,12 +5,15 @@
       "src": [
         {
           "files": [
-            "BurningLab.SceneManagement.csproj"
+            "BurningLab.SceneManagement.csproj",
+            "BurningLab.SceneManagement.Editor.csproj",
+            "BurningLab.SceneManagement.Samples.MinimalSetupSample.csproj"
           ],
           "src": ".."
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
@@ -44,7 +47,6 @@
       "default",
       "modern"
     ],
-    "postProcessors": [],
-    "keepFileLink": false
-  },
+    "postProcessors": []
+  }
 }
