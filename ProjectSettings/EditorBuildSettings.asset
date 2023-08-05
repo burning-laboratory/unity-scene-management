@@ -15,7 +15,7 @@ EditorBuildSettings:
     guid: cd969e9d3492469478c6c34530a0f92f
   - enabled: 1
     path: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
-      Core Concepts.unity
+      Second Scene.unity
     guid: bf17e56042893ce43b09bb8c7e5d7c55
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 620e7764eaf6e3942992a87d69258995, type: 2}

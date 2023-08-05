@@ -9,9 +9,9 @@
     },
     "configurations": [
         {
-            "name": "[Windows] Demo Application",
-            "outputFolder": "Windows",
-            "artifactName": "Scene Management Demo App",
+            "name": "[Android] Minimal Setup Sample",
+            "outputFolder": "Android/Minimal Setup Sample",
+            "artifactName": "development-build.apk",
             "buildTarget": 13,
             "developmentBuild": true,
             "autoConnectProfiler": false,
@@ -23,9 +23,24 @@
             "il2CppCodeGeneration": 0,
             "scenes": [
                 {
+                    "name": "SM_MSS Preloader",
+                    "path": "Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS Preloader.unity",
+                    "guid": "4c9c259463b057441b3e34d3a9e2ddf7"
+                },
+                {
                     "name": "SM_MSS Main",
                     "path": "Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS Main.unity",
                     "guid": "1217ff40c9965f4458b66aa9bc387972"
+                },
+                {
+                    "name": "SM_MSS App Info Part",
+                    "path": "Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS App Info Part.unity",
+                    "guid": "cd969e9d3492469478c6c34530a0f92f"
+                },
+                {
+                    "name": "SM_MSS Second Scene",
+                    "path": "Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS Second Scene.unity",
+                    "guid": "bf17e56042893ce43b09bb8c7e5d7c55"
                 }
             ],
             "defines": [
@@ -47,9 +62,9 @@
             "webGlCodeOptimization": 0,
             "iosXCodeBuildConfig": 0,
             "companyName": "burninglab",
-            "productName": "scenemanagement",
+            "productName": "mss",
             "productVersion": "1.0",
-            "applicationIdentifier": "com.burninglab.scenemanagement",
+            "applicationIdentifier": "com.burninglab.minimalsetupsample",
             "androidBundleVersionCode": 1,
             "androidMinimumSdkVersion": 22,
             "androidTargetSdkVersion": 0
