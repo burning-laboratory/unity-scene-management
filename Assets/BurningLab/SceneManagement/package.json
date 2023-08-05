@@ -37,9 +37,9 @@
    },
    "samples": [
       {
-         "displayName": "Tutorial app",
-         "description": "Scene management system tutorial application.",
-         "path": "Samples/SM Tutorial Application"
+         "displayName": "Minimal Setup Sample",
+         "description": "Example scenes management system implementation project.",
+         "path": "Samples/Minimal Setup Sample"
       }
    ],
    "unityDependencies": {
