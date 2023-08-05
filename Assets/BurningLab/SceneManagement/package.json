@@ -18,14 +18,14 @@
       "Management"
    ],
    "scripts": {
-      "build-readme": "node ./node_modules/unity-build-package-utils/ReadmeControl/BuildReadme.js -config ./unity-package-config.json",
-      "set-package-version-suffix": "node ./node_modules/unity-build-package-utils/VersionControl/SetVersionSuffix.js -config ./unity-package-config.json",
-      "clear-package-version-suffix": "node ./node_modules/unity-build-package-utils/VersionControl/ClearVersionSuffix.js -config ./unity-package-config.json",
-      "save-unity-dependencies": "node ./node_modules/unity-build-package-utils/DependenciesControl/SaveUnityDependencies.js -config ./unity-package-config.json",
-      "load-unity-dependencies": "node ./node_modules/unity-build-package-utils/DependenciesControl/LoadUnityDependencies.js -config ./unity-package-config.json",
-      "restore-unity-dependencies": "node ./node_modules/unity-build-package-utils/DependenciesControl/RestoreUnityDependencies.js -config ./unity-package-config.json",
-      "process-unity-samples": "node ./node_modules/unity-build-package-utils/SamplesControl/ProcessSamples.js -config ./unity-package-config.json",
-      "restore-unity-samples": "node ./node_modules/unity-build-package-utils/SamplesControl/RestoreSamples.js -config ./unity-package-config.json"
+      "build-readme": "node ./node_modules/unity-build-package-utility/ReadmeControl/BuildReadme.js -config ./unity-package-config.json",
+      "set-package-version-suffix": "node ./node_modules/unity-utility-package-utils/VersionControl/SetVersionSuffix.js -config ./unity-package-config.json",
+      "clear-package-version-suffix": "node ./node_modules/unity-build-package-utility/VersionControl/ClearVersionSuffix.js -config ./unity-package-config.json",
+      "save-unity-dependencies": "node ./node_modules/unity-build-package-utility/DependenciesControl/SaveUnityDependencies.js -config ./unity-package-config.json",
+      "load-unity-dependencies": "node ./node_modules/unity-build-package-utility/DependenciesControl/LoadUnityDependencies.js -config ./unity-package-config.json",
+      "restore-unity-dependencies": "node ./node_modules/unity-build-package-utility/DependenciesControl/RestoreUnityDependencies.js -config ./unity-package-config.json",
+      "process-unity-samples": "node ./node_modules/unity-build-package-utility/SamplesControl/ProcessSamples.js -config ./unity-package-config.json",
+      "restore-unity-samples": "node ./node_modules/unity-build-package-utility/SamplesControl/RestoreSamples.js -config ./unity-package-config.json"
    },
    "author": {
       "name": "Burning-Lab",
