@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,12 +117,67 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &122546103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122546104}
+  - component: {fileID: 122546105}
+  m_Layer: 0
+  m_Name: Main Scenes Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122546104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122546103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1282750895}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122546105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122546103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fec0faaa8564fdfb2888fcf829a2d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scenesGroupName: Main
+  _sceneReferences:
+  - rid: 3113576253767548933
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576253767548933
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Main Scene Data
+        _targetSceneData: {fileID: 1019329308}
 --- !u!1 &384066695
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +201,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384066695}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -154,8 +209,8 @@ Transform:
   - {fileID: 721370112}
   - {fileID: 1282750895}
   - {fileID: 1186583618}
-  m_Father: {fileID: 1900658123}
-  m_RootOrder: 1
+  m_Father: {fileID: 511156679}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511156678
 GameObject:
@@ -185,9 +240,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1900658123}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 384066696}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &511156680
 MonoBehaviour:
@@ -202,17 +258,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenesDatabaseProvider:
-    rid: -2
+    rid: 3113576253767548938
   _scenesGroupDatabaseProvider:
-    rid: -2
+    rid: 3113576253767548939
   _configurationProvider:
-    rid: -2
-  _mainCameraHandling: 0
+    rid: 3113576253767548940
+  _mainCameraHandling: 1
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 3113576253767548938
+      type: {class: SimpleScenesDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _targetDatabase: {fileID: 721370113}
+    - rid: 3113576253767548939
+      type: {class: SimpleScenesGroupDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _targetScenesGroupDatabase: {fileID: 1282750896}
+    - rid: 3113576253767548940
+      type: {class: SimpleScenesManagementConfigurationProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _targetConfiguration: {fileID: 1186583619}
+--- !u!1 &561775346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561775347}
+  - component: {fileID: 561775348}
+  m_Layer: 0
+  m_Name: Second Scenes Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561775347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561775346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1282750895}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561775348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561775346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fec0faaa8564fdfb2888fcf829a2d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scenesGroupName: Second
+  _sceneReferences:
+  - rid: 3113576253767548935
+  references:
+    version: 2
+    RefIds:
+    - rid: 3113576253767548935
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Second Scene Data
+        _targetSceneData: {fileID: 566175696}
 --- !u!1 &566175694
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +345,7 @@ GameObject:
   - component: {fileID: 566175695}
   - component: {fileID: 566175696}
   m_Layer: 0
-  m_Name: SM_MSS Core Concepts Scene Data
+  m_Name: SM_MSS Second Scene Data
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,16 +378,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f994c5b925aa46d2a46a182a201aca1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetScene: 
+  _targetScene: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+    Second Scene.unity
   _sceneAssetReference:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _sceneAssetType: 0
-  _loadPriority: 0
+  _loadPriority: 100
   _sceneLoadType: 0
-  _sceneLoadMode: 0
+  _sceneLoadMode: 1
   _sceneActivationMode: 0
   _sceneReloadPolicy: 0
 --- !u!1 &721370111
@@ -316,10 +438,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47db5a9b89b740a9bb834c9ac9fbd1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenesData: []
+  _scenesData:
+  - rid: 3113576253767548929
+  - rid: 3113576253767548930
+  - rid: 3113576253767548931
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3113576253767548929
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Main Scene Data
+        _targetSceneData: {fileID: 1019329308}
+    - rid: 3113576253767548930
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Second Scene Data
+        _targetSceneData: {fileID: 566175696}
+    - rid: 3113576253767548931
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: App Info Scene Data
+        _targetSceneData: {fileID: 875023475}
 --- !u!1 &875023473
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,16 +504,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f994c5b925aa46d2a46a182a201aca1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetScene: 
+  _targetScene: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+    App Info Part.unity
   _sceneAssetReference:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _sceneAssetType: 0
-  _loadPriority: 0
-  _sceneLoadType: 0
-  _sceneLoadMode: 0
+  _loadPriority: 80
+  _sceneLoadType: 1
+  _sceneLoadMode: 1
   _sceneActivationMode: 0
   _sceneReloadPolicy: 0
 --- !u!1 &1019329306
@@ -420,16 +561,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f994c5b925aa46d2a46a182a201aca1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetScene: 
+  _targetScene: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+    Main.unity
   _sceneAssetReference:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _sceneAssetType: 0
-  _loadPriority: 0
+  _loadPriority: 100
   _sceneLoadType: 0
-  _sceneLoadMode: 0
+  _sceneLoadMode: 1
   _sceneActivationMode: 0
   _sceneReloadPolicy: 0
 --- !u!1 &1186583617
@@ -476,10 +618,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926b884e7c8c4b6ebff21dd44f14fee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _alwaysLoadedScenes: []
+  _alwaysLoadedScenes:
+  - rid: 3113576253767548932
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3113576253767548932
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: App Info Scene Data
+        _targetSceneData: {fileID: 875023475}
 --- !u!1 &1282750894
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +656,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 122546104}
+  - {fileID: 561775347}
   m_Father: {fileID: 384066696}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -524,43 +674,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b094c66484d05bf55b20ccf8986c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenesGroups: []
+  _scenesGroups:
+  - rid: 3113576253767548936
+  - rid: 3113576253767548937
   references:
     version: 2
-    RefIds: []
---- !u!1 &1900658122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1900658123}
-  m_Layer: 0
-  m_Name: Scenes Management
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1900658123
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900658122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 511156679}
-  - {fileID: 384066696}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+    RefIds:
+    - rid: 3113576253767548936
+      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Main Scenes Group
+        _targetScenesGroup: {fileID: 122546105}
+    - rid: 3113576253767548937
+      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      data:
+        _displayName: Second Scenes Group
+        _targetScenesGroup: {fileID: 561775348}
 --- !u!1 &2124616519
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,9 +730,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
