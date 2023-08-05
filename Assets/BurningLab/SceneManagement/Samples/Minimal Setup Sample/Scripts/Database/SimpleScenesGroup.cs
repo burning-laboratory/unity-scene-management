@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BurningLab.SceneManagement.Database;
+using BurningLab.SceneManagement.References;
 using UnityEngine;
 
 namespace BurningLab.SceneManagement.Samples.MinimalSetupSample.Database
