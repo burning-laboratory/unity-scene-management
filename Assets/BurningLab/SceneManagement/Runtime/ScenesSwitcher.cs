@@ -6,7 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using BurningLab.SceneManagement.Database;
-using BurningLab.SceneManagement;
+using BurningLab.SceneManagement.Providers;
 using BurningLab.SceneManagement.Types;
 using BurningLab.SceneManagement.Utils;
 

@@ -6,37 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Splashscreen.unity
-    guid: 082fffe2a4249d640affb1b27d533c0a
+    path: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+      Main.unity
+    guid: 1217ff40c9965f4458b66aa9bc387972
   - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Preloaders/App
-      Preloader.unity
-    guid: 999c2514c1b660249874f83424d3de76
+    path: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+      App Info Part.unity
+    guid: cd969e9d3492469478c6c34530a0f92f
   - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/Main.unity
-    guid: 7a72819228f9943459d77f8cfeb0c41a
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/UI/App
-      Info.unity
-    guid: a4095ac18e5c2834aa51c5001dbebf8a
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Misc/Services.unity
-    guid: 4bf4b0c2d2fe90d41a6156871b8b530e
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/0
-      - Tutorial Introduction.unity
-    guid: ddd16275b09928447bc1946b3f11fb7e
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/1
-      - General Concepts.unity
-    guid: 77047b2e5686f2c419023c97fcdcdb72
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/2
-      -Lets Start.unity
-    guid: fd837ad23929ba64e875d0e882d08d67
-  - enabled: 1
-    path: Assets/BurningLab/SceneManagement/Samples/SM Tutorial Application/Scenes/Tutorial/3
-      -Finish.unity
-    guid: 353a8d0a3a7291b4998f7f583e7c7ab7
+    path: Assets/BurningLab/SceneManagement/Samples/Minimal Setup Sample/Scenes/SM_MSS
+      Core Concepts.unity
+    guid: bf17e56042893ce43b09bb8c7e5d7c55
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 620e7764eaf6e3942992a87d69258995, type: 2}
