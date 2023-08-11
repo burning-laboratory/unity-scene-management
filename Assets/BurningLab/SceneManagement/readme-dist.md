@@ -77,12 +77,12 @@ A list of interfaces defining objects storing data for loading scenes.
 
 You can see examples of interface implementations in the package examples or in extensions.
 
-* [**SM Local Scenes Database Extension**]() - An extension that provides an implementation of the scene database in the form `ScriptableObject` objects.
-* [**SM Remote Scenes Database Extension**]() - An extension that provides the implementation of a database of scenes in the form of databases managed by a package [**Remote Database**](). (Burning-Lab SDK access required).
+* [**SM Local Scenes Database Extension**](https://packages.burning-lab.com/-/web/detail/com.burning-lab.scenesmanagement.extension.localscenesdatabase) - An extension that provides an implementation of the scene database in the form `ScriptableObject` objects.
+* [**SM Remote Scenes Database Extension**](https://packages.burning-lab.com/-/web/detail/com.burning-lab.scenesmanagement.extension.remotescenesdatabase) - An extension that provides the implementation of a database of scenes in the form of databases managed by a package [**Remote Database**](). (Burning-Lab SDK access required).
 
 ## Distribute
 
-* [packages.burning-lab.com]()
+* [packages.burning-lab.com](https://packages.burning-lab.com/-/web/detail/com.burning-lab.scenemanagement)
 
 ## Developers
 

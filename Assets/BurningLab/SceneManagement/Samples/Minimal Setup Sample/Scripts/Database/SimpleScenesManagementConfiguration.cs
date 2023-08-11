@@ -3,6 +3,7 @@ using BurningLab.SceneManagement.Database;
 using BurningLab.SceneManagement.References;
 using UnityEngine;
 
+
 namespace BurningLab.SceneManagement.Samples.MinimalSetupSample.Database
 {
     public class SimpleScenesManagementConfiguration : MonoBehaviour, IScenesManagementConfiguration

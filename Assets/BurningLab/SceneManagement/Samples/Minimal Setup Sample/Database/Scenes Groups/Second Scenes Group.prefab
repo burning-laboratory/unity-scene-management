@@ -51,7 +51,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548935
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Second Scene Data
         _targetSceneData: {fileID: 2099443477892951905, guid: 435d10ade5b2bf44a807895aad016b1a, type: 3}
