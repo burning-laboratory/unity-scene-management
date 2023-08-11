@@ -1,5 +1,5 @@
 ﻿<p align="center">
-      <img src="https://i.ibb.co/ysW7tTq/Scene-Management-Remote-Database-Github-Logo.png" alt="Project Logo" width="850">
+      <img src="https://i.ibb.co/9mDz5t6/Scene-Management-Git-Hub-Logo.png" alt="Project Logo" width="850">
 </p>
 
 <p align="center">
