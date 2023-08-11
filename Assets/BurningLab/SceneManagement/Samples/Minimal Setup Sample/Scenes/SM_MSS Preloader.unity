@@ -297,15 +297,15 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548938
-      type: {class: SimpleScenesDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _targetDatabase: {fileID: 721370113}
     - rid: 3113576253767548939
-      type: {class: SimpleScenesGroupDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesGroupDatabaseProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _targetScenesGroupDatabase: {fileID: 1282750896}
     - rid: 3113576253767548940
-      type: {class: SimpleScenesManagementConfigurationProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesManagementConfigurationProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _targetConfiguration: {fileID: 1186583619}
 --- !u!4 &561775347 stripped
@@ -413,22 +413,22 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548929
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Main Scene Data
         _targetSceneData: {fileID: 1019329308}
     - rid: 3113576253767548930
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Second Scene Data
         _targetSceneData: {fileID: 566175696}
     - rid: 3113576253767548931
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: App Info Scene Data
         _targetSceneData: {fileID: 875023475}
     - rid: 3113576253767548941
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Preloader Scene Data
         _targetSceneData: {fileID: 709520401}
@@ -514,7 +514,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548932
-      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleSceneDataReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: App Info Scene Data
         _targetSceneData: {fileID: 875023475}
@@ -571,12 +571,12 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548936
-      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Main Scenes Group
         _targetScenesGroup: {fileID: 122546105}
     - rid: 3113576253767548937
-      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Second Scenes Group
         _targetScenesGroup: {fileID: 561775348}
@@ -726,12 +726,12 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 3113576253767548942
-      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesGroupReference, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.References, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _displayName: Main Scenes Group
         _targetScenesGroup: {fileID: 122546105}
     - rid: 3113576253767548945
-      type: {class: SimpleScenesManagementConfigurationProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: BurningLab.SceneManagement.Samples.MinimalSetupSample}
+      type: {class: SimpleScenesManagementConfigurationProvider, ns: BurningLab.SceneManagement.Samples.MinimalSetupSample.Providers, asm: Burning-Lab.SceneManagement.Samples.MinimalSetupSample}
       data:
         _targetConfiguration: {fileID: 1186583619}
 --- !u!1001 &1594213266019327138
